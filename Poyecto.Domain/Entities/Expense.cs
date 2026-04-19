@@ -1,6 +1,6 @@
 ﻿using System.Runtime;
 
-namespace Poyecto.Domain.Entities
+namespace Project.Domain.Entities
 {
     public class Expense
     {
