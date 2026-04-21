@@ -2,8 +2,10 @@
 
 namespace Project.Application.Interfaces
 {
-    public class Class1
+    public interface IExpenseRepository
     {
-
+        IEnumerable<Expense> GetAllExpenses();
+        void AddExpense(Expense expense);
+         
     }
 }
