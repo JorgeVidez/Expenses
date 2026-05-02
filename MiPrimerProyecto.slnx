@@ -2,8 +2,8 @@
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
-  <Project Path="Poyecto.Domain/Project.Domain.csproj" Id="fae319e2-bd01-4516-88ad-c815369fa126" />
-  <Project Path="Proyect.Api/Project.Api.csproj" Id="1bf9bb31-7d9b-4d33-9470-8543e64e6c49" />
-  <Project Path="Proyect.Application/Project.Application.csproj" Id="f08790df-a785-4538-8911-9fe6a25e73ae" />
-  <Project Path="Proyect.Infrastructure/Project.Infrastructure.csproj" Id="a1089c4f-f7ad-4d3f-b2fb-b1d967b4846a" />
+  <Project Path="Poject.Api/Project.Api.csproj" />
+  <Project Path="Poject.Application/Project.Application.csproj" />
+  <Project Path="Poject.Domain/Project.Domain.csproj" />
+  <Project Path="Poject.Infrastructure/Project.Infrastructure.csproj" />
 </Solution>
