@@ -10,24 +10,24 @@ namespace Project.Api.Controllers
         [Route("api/[controller]")]
         public class ExpenseController : ControllerBase
         {
-            private readonly IExpenseRepository _expenseRepository;
+            private readonly IExpenseService _expenseService;
 
 
-            public ExpenseController(IExpenseRepository expenseRepository)
+            public ExpenseController(IExpenseService expenseService)
             {
-                _expenseRepository = expenseRepository;
+                _expenseService = expenseService;
             }
 
             [HttpGet]
             public IActionResult GetAll()
             {
-               return Ok(_expenseRepository.GetAllExpenses());
+               return Ok(_expenseService.GetHistoryExpenses());
             }
 
             [HttpPost]
             public IActionResult Create(Expense expense)
             {
-                _expenseRepository.AddExpense(expense);
+                _expenseService.CreateExpense(expense);
                 return Ok(expense);
             }
         }

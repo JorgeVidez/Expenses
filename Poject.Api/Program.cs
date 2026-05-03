@@ -15,7 +15,7 @@ builder.Services.AddOpenApi();
 
 // 2. CONFIGURAR LA INYECCIÓN DE DEPENDENCIAS
 builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
-//builder.Services.AddScoped<IExpenseService, ExpenseService>();
+builder.Services.AddScoped<IExpenseService, ExpenseServices>();
 
 // Connection string y otros servicios se configurarían aquí
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
