@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Project.Application.DTOs;
 using Project.Application.Interfaces;
 using Project.Domain.Entities;
 using Project.Infrastructure.Repositories;
@@ -25,10 +26,10 @@ namespace Project.Api.Controllers
             }
 
             [HttpPost]
-            public IActionResult Create(Expense expense)
+            public IActionResult Create(CreateExpenseDto createExpenseDto)
             {
-                _expenseService.CreateExpense(expense);
-                return Ok(expense);
+                _expenseService.CreateExpense(createExpenseDto);
+                return Ok(createExpenseDto);
             }
         }
     
