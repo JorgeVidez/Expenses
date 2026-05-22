@@ -38,12 +38,12 @@ namespace Project.Application.Services
         {
             var entities = _expenseRepository.GetAllExpenses();
 
-            return entities.Select(expenseDto => new ExpenseDto
+            return entities.Select(entitie => new ExpenseDto
             {
-                Id = expenseDto.Id,
-                Amount = expenseDto.Amount,
-                Description = expenseDto.Description,
-                Date = expenseDto.Date,
+                Id = entitie.Id,
+                Amount = entitie.Amount,
+                Description = entitie.Description,
+                Date = entitie.Date,
             }).ToList();
 
 
