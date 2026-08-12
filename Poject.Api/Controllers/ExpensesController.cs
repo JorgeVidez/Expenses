@@ -28,8 +28,25 @@ namespace Project.Api.Controllers
             [HttpPost]
             public IActionResult Create(CreateExpenseDto createExpenseDto)
             {
-                _expenseService.CreateExpense(createExpenseDto);
-                return Ok(createExpenseDto);
+
+                try
+                {
+                    _expenseService.CreateExpense(createExpenseDto);
+                    return Ok(createExpenseDto);
+                }
+                catch (ArgumentException ex)
+                {
+
+                    return BadRequest(new { message = ex.Message });
+                }
+                catch (Exception) 
+                {
+                    return StatusCode(500, new { message = "An error occurred while creating the expense." });
+                }
+
+            
+                
+
             }
         }
     
