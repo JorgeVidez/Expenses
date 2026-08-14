@@ -48,5 +48,31 @@ namespace Project.Application.Services
 
 
         }
+
+        public ExpenseDto? GetExpenseById(int id)
+        {
+            var entity = _expenseRepository.GetExpenseById(id);
+            if (entity == null)
+            {
+                return null;
+            }
+            return new ExpenseDto
+            {
+                Id = entity.Id,
+                Amount = entity.Amount,
+                Description = entity.Description,
+                Date = entity.Date
+            };
+        }
+
+        public void DeleteExpenseById(int id)
+        {
+            var expense = _expenseRepository.GetExpenseById(id);
+            if (expense == null)
+            {
+                throw new KeyNotFoundException($"Expense with ID {id} not found.");
+            }
+            _expenseRepository.DeletedExpense(expense);
+        }
     }
 }

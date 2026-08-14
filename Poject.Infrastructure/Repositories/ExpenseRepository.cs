@@ -23,5 +23,16 @@ namespace Project.Infrastructure.Repositories
         {
             return _context.Expenses.AsNoTracking().ToList();
         }
+
+        public Expense? GetExpenseById(int id)
+        {
+            return _context.Expenses.FirstOrDefault(e => e.Id == id);
+        }
+
+        public void DeletedExpense(Expense expense)
+        {
+            _context.Expenses.Remove(expense);
+            _context.SaveChanges();
+        }
     }
 }

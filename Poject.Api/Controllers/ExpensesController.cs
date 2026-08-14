@@ -48,6 +48,35 @@ namespace Project.Api.Controllers
                 
 
             }
+
+                [HttpGet("{id}")]
+                public IActionResult Get(int id)
+                {
+                    var expense = _expenseService.GetExpenseById(id);
+                    if (expense == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(expense);
+                }
+
+            [HttpDelete("{id}")]
+                public IActionResult Delete(int id)
+                {
+                    try
+                    {
+                        _expenseService.DeleteExpenseById(id);
+                        return Ok();
+                    }
+                    catch (KeyNotFoundException ex)
+                    {
+                        return NotFound(new {message = ex.Message});
+                    }
+                    catch(Exception)
+                    {
+                        return StatusCode(500, new { message = "An error occurred while deleting the expense." });
+                    }
+                }
         }
     
 }

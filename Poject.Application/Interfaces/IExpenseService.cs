@@ -10,5 +10,9 @@ namespace Project.Application.Interfaces
     {
         void CreateExpense(CreateExpenseDto createExpenseDto);
         IEnumerable<ExpenseDto> GetHistoryExpenses();
+
+        ExpenseDto? GetExpenseById(int id);
+
+        void DeleteExpenseById(int id);
     }
 }

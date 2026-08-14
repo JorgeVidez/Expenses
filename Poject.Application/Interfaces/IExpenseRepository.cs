@@ -8,5 +8,8 @@ namespace Project.Application.Interfaces
         IEnumerable<Expense> GetAllExpenses();
         void AddExpense(Expense expense);
          
+        Expense? GetExpenseById(int id);
+
+        void DeletedExpense(Expense expense);
     }
 }
